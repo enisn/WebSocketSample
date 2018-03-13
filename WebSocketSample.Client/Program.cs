@@ -46,7 +46,7 @@ namespace WebSocketSample.Client
                 byte[] buffer = Encoding.UTF8.GetBytes(stringToSend);
 
                 await webSocket.SendAsync(new ArraySegment<byte>(buffer),WebSocketMessageType.Binary,false,CancellationToken.None);
-                Console.WriteLine("Sent:         "+stringToSend);
+                Console.WriteLine("Sent: "+stringToSend);
 
                 await Task.Delay(1000);
             }
@@ -65,7 +65,7 @@ namespace WebSocketSample.Client
                 }
                 else
                 {
-                    Console.WriteLine("Receive           :"+Encoding.UTF8.GetString(buffer).TrimEnd('\0'));
+                    Console.WriteLine("Received: "+Encoding.UTF8.GetString(buffer).TrimEnd('\0'));
                 }
             }
         }
